@@ -1,8 +1,9 @@
 <?php
 
 namespace Alura\Solid\Model;
+use IPontuacao;
 
-class Curso
+class Curso implements IPontuacao
 {
     private $nome;
     private $videos;
@@ -33,5 +34,11 @@ class Curso
     public function recuperarVideos(): array
     {
         return $this->videos;
+    }
+	/**
+	 * @return int
+	 */
+	public function calcularPontuacao(): int {
+        return 100;
     }
 }

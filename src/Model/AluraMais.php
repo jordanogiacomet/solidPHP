@@ -1,8 +1,9 @@
 <?php
 
 namespace Alura\Solid\Model;
+use IPontuacao;
 
-class AluraMais extends Video
+class AluraMais extends Video implements IPontuacao
 {
     private $categoria;
 
@@ -16,4 +17,9 @@ class AluraMais extends Video
     {
         return str_replace(' ', '-', strtolower($this->categoria));
     }
+
+    public function calcularPontuacao(){
+        return $this->minutosDeDuracao() * 2;
+    }
+
 }
